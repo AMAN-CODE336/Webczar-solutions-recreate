@@ -376,7 +376,7 @@ export default function Servicepage() {
         </div>
       </section>
 
-      <div className="">
+      <div className="px-4 sm:px-6 lg:px-34 mt-44">
   <section className="bg-gradient-to-r from-[#002244] to-[#006AFE] text-white rounded-xl p-6 sm:p-8 md:p-16 my-12 relative overflow-hidden">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
       <div>
