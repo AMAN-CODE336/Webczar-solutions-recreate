@@ -20,9 +20,11 @@ const Footer = () => {
         <div className=''>
           <h3 className="text-[#006AFE]  font-semibold ">contact</h3>
          <div className='flex flex-col '>
-          <p className="text-sm">hi@yourdomain.com</p>
-          <p className="text-sm">+91 90000 00000</p>
-          <p className="text-sm">City, State</p>
+          <p className="text-sm">info@webczarsolutions.com</p>
+          <p className="text-sm">+91 998822 1729</p>
+          <p className="text-md"><strong>  Chandigarh:</strong> Level 3, Golden Square, Zirakpur</p>
+          <p className="text-md"> <strong> Mohali:</strong> Unit No. 51/2, Kalkat Bhawan, Airport Road, Mohali</p>
+          <p className="text-md"> <strong>Zirakpur:</strong>  Unit No. 52/9, Sushma Infinium, Zirakpur</p>
           </div> 
         </div>
 
@@ -30,6 +32,7 @@ const Footer = () => {
         <div>
           <h3 className="text-[#006AFE]  font-semibold mb-2">work inquiries</h3>
           <p className="text-sm mb-1">Want to collaborate or bring us<br />on board for a project?</p>
+          <p className="text-sm">+91-91304 91404</p>
           <p className="text-sm">hi@yourdomain.com</p>
         </div>
 
@@ -47,16 +50,16 @@ const Footer = () => {
         <p className="uppercase text-sm tracking-wide">engage and follow</p>
         <div className="flex gap-4 text-white text-lg">
           <FaBehance />
-          <FaLinkedinIn />
-          <FaInstagram />
-          <FaFacebookF />
+         <a href="https://www.linkedin.com/company/webczarsolutions"><FaLinkedinIn /></a> 
+          <a href="https://www.instagram.com/webczarsolutions/#"><FaInstagram /></a>
+          <a href="https://www.facebook.com/webczarsolutions"><FaFacebookF /></a>
           <FaYoutube />
           <FaXTwitter />
         </div>
       </div>
 
       <div className="mt-6 text-center text-sm text-gray-400">
-    © {new Date().getFullYear()} webczarsolutions®. All rights reserved.
+    ©2017 webczarsolutions®. All rights reserved.
   </div>
     </footer>
   );
