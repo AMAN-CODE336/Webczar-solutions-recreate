@@ -32,15 +32,15 @@ const Footer = () => {
         <div>
           <h3 className="text-[#006AFE]  font-semibold mb-2">work inquiries</h3>
           <p className="text-sm mb-1">Want to collaborate or bring us<br />on board for a project?</p>
-          <p className="text-sm">+91-91304 91404</p>
-          <p className="text-sm">info@webczarsolutions.com</p>
+          <p className="text-sm"><strong>+91-91304 91404</strong></p>
+          <p className="text-sm"> <strong>info@webczarsolutions.com</strong></p>
         </div>
 
         {/* Careers */}
         <div>
           <h3 className="text-[#006AFE] font-semibold mb-2">careers</h3>
           <p className="text-sm mb-1">Interested in joining our team?<br />We’re always on the lookout for<br />fresh talent.</p>
-          <p className="text-sm">manager.webczarsolutions@gmail.com</p>
+          <p className="text-sm"><strong>manager.webczarsolutions@gmail.com</strong></p>
         </div>
         
       </div>
