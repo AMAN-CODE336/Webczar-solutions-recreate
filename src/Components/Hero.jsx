@@ -135,7 +135,7 @@ export default function Hero() {
 
 <div className="flex flex-col lg:flex-row mt-12 px-4 gap-4 md:px-20">
   {/* Left Content */}
-  <div className="mt-12 lg:mt-28 space-y-3 text-center lg:text-left">
+  <div className=" mt-12 lg:mt-28 space-y-3 text-center lg:text-left">
     <h2 className="text-xl font-medium text-white">Our Core Services</h2>
     <p className="text-2xl sm:text-3xl font-semibold text-[#006AFE]">
       Smart Solutions to Power Your Digital Journey

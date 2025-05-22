@@ -20,6 +20,7 @@ export default function App (){
         <>
 
         <Navbar/>
+        
         {/* <Hero/> */}
         {/* <Servicepage/> */}
         {/* <Portfoliopage/> */}

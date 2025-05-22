@@ -57,7 +57,7 @@ const Togglebutton = () => {
             <Link
               to="/"
               onClick={() => setIsOpen(false)}
-              className="absolute top-10 left-20"
+              className="absolute top-10 left-8 lg:top-10 lg:left-20"
             >
               <img
                 src="/Images/logoWebczar-lightTM.png"
@@ -66,6 +66,7 @@ const Togglebutton = () => {
               />
             </Link>
 
+            
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-10 right-14 text-4xl font-bold"
