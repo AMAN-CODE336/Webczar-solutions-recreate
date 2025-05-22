@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const ContactForm = () => {
   const form = useRef();
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -44,7 +44,7 @@ const navigate = useNavigate()
       .then(
         (result) => {
           console.log("Email sent successfully:", result.text);
-          window.location.reload()
+          window.location.reload();
         },
         (error) => {
           console.log("Email send failed:", error.text);
@@ -124,8 +124,15 @@ const navigate = useNavigate()
             >
               <option value="">Select Country</option>
               <option value="India">India</option>
-              <option value="USA">USA</option>
-              <option value="UK">UK</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Singapore">Singapore</option>
+              <option value="South Africa">South Africa</option>
             </select>
 
             <textarea
