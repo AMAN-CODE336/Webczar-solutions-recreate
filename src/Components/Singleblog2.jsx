@@ -8,7 +8,7 @@ export default function SingleBlog2() {
   return (
     <div className=" text-white  font-sans">
       {/* Header */}
-      <header className="bg-black text-white py-6 px-4 md:px-20">
+      <header className="bg-black mt-20 text-white py-6 px-4 md:px-20">
         <h1 className="text-3xl md:text-5xl font-bold">
           Unlocking Digital Success with Webczar Solution: The Best Web
           Development Company{" "}
@@ -38,7 +38,7 @@ export default function SingleBlog2() {
       </div>
 
       {/* Content Section */}
-      <main className="px-4 md:px-20 py-10 max-w-4xl mx-auto">
+      <main className="px-4  md:px-20 py-10 max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">
           Building Digital Experiences That Drive Growth{" "}
         </h2>

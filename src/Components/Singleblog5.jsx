@@ -8,7 +8,7 @@ export default function SingleBlog5() {
   return (
     <div className=" text-white  font-sans">
       {/* Header */}
-      <header className="bg-black text-white py-6 px-4 md:px-20">
+      <header className="bg-black mt-20 text-white py-6 px-4 md:px-20">
         <h1 className="text-3xl md:text-5xl font-bold">
           Responsive Design with Tailwind CSS{" "}
         </h1>
