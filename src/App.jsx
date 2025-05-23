@@ -4,7 +4,6 @@ import '@fontsource/inter/600.css';
 import '@fontsource/playfair-display/400.css';
 import '@fontsource/playfair-display/700.css';
 
-
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Servicepage from './Components/Servicepage';
@@ -16,6 +15,8 @@ import SingleBlog from './Components/Singleblog1';
 import ScrollToTopButton from './Components/ScrollToTopButton';
 import Company from './Components/Companypage';
 export default function App (){
+    
+      
     return (
         <>
 

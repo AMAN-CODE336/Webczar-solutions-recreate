@@ -6,6 +6,7 @@ import Portfoliopage from './Portfoliopage';
 import Servicepage from './Servicepage';
 import Blogspage from './BlogsPage';
 import Hero from './Hero';
+import { useState , useEffect } from 'react';
 import ContactForm from './ContactForm'
 import SingleBlog1 from './Singleblog1';
 import SingleBlog2 from './Singleblog2';
@@ -15,7 +16,20 @@ import SingleBlog5 from './Singleblog5';
 import SingleBlog6 from './Singleblog6';
 import Company from './Companypage';
 import Contactpage from './Contactpage';
+import Loader from './Loader';
 const Navbar = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
 <Router>
     <nav className="fixed top-0 left-0 w-full z-20 px-6 py-4">
