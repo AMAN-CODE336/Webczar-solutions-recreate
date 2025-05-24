@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { data } from "react-router-dom";
 
 const DigitalMarketing = () => {
-
+ useEffect(() => {
+    window.scrollTo(0,0)
+ } , [])
  const data =  [
         {
           icon: "🔍",
