@@ -14,6 +14,7 @@ import Blogspage from './Components/BlogsPage';
 import SingleBlog from './Components/Singleblog1';
 import ScrollToTopButton from './Components/ScrollToTopButton';
 import Company from './Components/Companypage';
+import WhatsAppButton from './Components/Whatsappbutton';
 export default function App (){
     
       
@@ -29,6 +30,7 @@ export default function App (){
         {/* <Blogspage/> */}
         {/* <SingleBlog/> */}
         {/* <Company/> */}
+        <WhatsAppButton/>
 <ScrollToTopButton/>
 <Footer/>
 

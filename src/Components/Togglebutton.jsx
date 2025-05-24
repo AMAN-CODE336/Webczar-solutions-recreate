@@ -23,22 +23,75 @@ const itemVariants = {
 };
 
 const menuLinks = [
-  { name: "Services", path: "/services" },
+  {
+    name: "Services",
+    path: "/services",
+    dropdown: true,
+    subLinks: [
+      {
+        name: "Digital Marketing",
+        path: "/services/digital-marketing",
+        dropdown: true,
+        subLinks: [
+          { name: "Bulk SMS", path: "/services/digital-marketing/sms" },
+          { name: "SMO", path: "/services/digital-marketing/smo" },
+          { name: "Email Services", path: "/services/digital-marketing/email" },
+        ],
+      },
+      {
+        name: "Web Development",
+        path: "/services/web-development",
+        dropdown: true,
+        subLinks: [
+          { name: "E-commerce", path: "/services/web-development/ecommerce" },
+          { name: "Portfolio", path: "/services/web-development/portfolio" },
+        ],
+      },
+    ],
+  },
   { name: "Portfolio", path: "/portfolios" },
   { name: "Company", path: "/company" },
   { name: "Blogs", path: "/blogs" },
   { name: "Contact", path: "/contact" },
 ];
 
+const NestedDropdown = ({ items, setIsOpen }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  return (
+    <div className="absolute left-full top-0 bg-white text-black py-2 px-4 rounded-lg shadow-lg space-y-2 z-50 min-w-[200px]">
+      {items.map((item, index) => (
+        <div
+          key={item.name}
+          className="relative group"
+          onMouseEnter={() => setActiveIndex(index)}
+          onMouseLeave={() => setActiveIndex(null)}
+        >
+          <Link
+            to={item.path}
+            onClick={() => setIsOpen(false)}
+            className="block px-2 py-1 hover:bg-blue-100 rounded"
+          >
+            {item.name}
+          </Link>
+          {item.dropdown && activeIndex === index && (
+            <NestedDropdown items={item.subLinks} setIsOpen={setIsOpen} />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const Togglebutton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeService, setActiveService] = useState(null);
 
   return (
     <div className="relative">
-      {/* Toggle Button - Visible only on small screens */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="sm:block  px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+        className="sm:block px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
       >
         <CgMenuRightAlt />
       </button>
@@ -53,7 +106,6 @@ const Togglebutton = () => {
             animate="visible"
             exit="exit"
           >
-            {/* Logo at top-left */}
             <Link
               to="/"
               onClick={() => setIsOpen(false)}
@@ -66,25 +118,34 @@ const Togglebutton = () => {
               />
             </Link>
 
-            
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-10 right-14 text-4xl font-bold"
             >
               &times;
             </button>
-<div className="space-y-4">
-            {menuLinks.map((link) => (
-              <motion.div key={link.name} variants={itemVariants}>
-                <Link
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="text-5xl font-semibold  my-2 hover:underline"
+
+            <div className="space-y-6 relative">
+              {menuLinks.map((link, index) => (
+                <motion.div
+                  key={link.name}
+                  variants={itemVariants}
+                  className="text-center group relative"
+                  onMouseEnter={() => setActiveService(index)}
+                  onMouseLeave={() => setActiveService(null)}
                 >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    to={link.path}
+                    onClick={() => !link.dropdown && setIsOpen(false)}
+                    className="text-5xl font-semibold my-2 hover:underline"
+                  >
+                    {link.name}
+                  </Link>
+                  {link.dropdown && activeService === index && (
+                    <NestedDropdown items={link.subLinks} setIsOpen={setIsOpen} />
+                  )}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         )}

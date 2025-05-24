@@ -101,13 +101,13 @@ Driven by innovation, collaboration, and results, we merge technical excellence 
     quote="Drives retention strategy by focusing on pricing, budgeting, customer satisfaction, and competitive market positioning for growth."
   />
 
-  {/* <ClientCard
+  <ClientCard
     image="/Images/Company-imgs/kajal-thakur.jpg"
     name="Kajal Thakur"
     role="HR & Administration Lead"
     // company="Fima CF India"
     quote="Builds a positive work culture by fostering strong employee relations, resolving concerns, and supporting organizational success."
-  /> */}
+  />
 
   <ClientCard
     image="/Images/Company-imgs/manish-gupta.jpg"
