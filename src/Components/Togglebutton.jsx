@@ -31,7 +31,7 @@ const menuLinks = [
       {
         name: "Digital Marketing",
         path: "/services/digital-marketing",
-        dropdown: true,
+        dropdown: false,
         subLinks: [
           { name: "Bulk SMS", path: "/services/digital-marketing/sms" },
           { name: "SMO", path: "/services/digital-marketing/smo" },
@@ -41,7 +41,7 @@ const menuLinks = [
       {
         name: "Web Development",
         path: "/services/web-development",
-        dropdown: true,
+        dropdown: false,
         subLinks: [
           { name: "E-commerce", path: "/services/web-development/ecommerce" },
           { name: "Portfolio", path: "/services/web-development/portfolio" },
@@ -59,7 +59,7 @@ const NestedDropdown = ({ items, setIsOpen }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="absolute left-full top-0 bg-white text-black py-2 px-4 rounded-lg shadow-lg space-y-2 z-50 min-w-[200px]">
+    <div className="absolute top-auto top-0 bg-white text-black py-2 px-4 rounded-lg shadow-lg space-y-2 z-50 min-w-[200px]">
       {items.map((item, index) => (
         <div
           key={item.name}
