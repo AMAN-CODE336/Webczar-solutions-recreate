@@ -82,7 +82,7 @@ const DigitalMarketing = () => {
       </section>
 
       {/* Why Choose Us */}
-      <div className="p-28 ">
+      <div className=" mt-12 md:pl-28 md:pr-28 ">
       <section className="bg-gray-50  rounded-lg border-t-3 border-b-3 border-blue-600 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-gray-800"> Why Choose Us?</h2>
@@ -96,7 +96,7 @@ const DigitalMarketing = () => {
       </section></div>
 
       {/* Call to Action */}
-      <div className="p-28 ">
+      <div className=" mt-28 md:pl-28 md:pr-28 ">
       <section className="bg-blue-600 text-white rounded-lg border-t-3 border-b-3 border-white py-16 text-center px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4"> Ready to Grow Online?</h2>
