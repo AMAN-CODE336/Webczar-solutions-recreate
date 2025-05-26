@@ -14,7 +14,9 @@ import ClientCard from "./Clientcard";
 import ScrollVelocity from "./Scrolltext";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 export default function Hero() {
   
   useEffect(() => {
@@ -26,6 +28,11 @@ export default function Hero() {
     "rotate(-5deg)",
     "rotate(5deg) translate(70px)",
     "rotate(-5deg) translate(150px)",
+  ];
+
+  const videos = [
+    "/webczar front banner-1.mp4",
+    "/banner-video-2.mp4"
   ];
 
   const handleAnimationComplete = () => {
@@ -51,18 +58,34 @@ export default function Hero() {
             yGap={36}
           /> */}
 
- <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] max-h-screen"
+<Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        loop={true}
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
       >
-        <source src="/Untitled design.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        {videos.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover max-h-screen"
+            >
+              <source src={src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+          </SwiperSlide>             
 
-      <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+        ))} 
+
+      </Swiper>
+
+     
+      
+
         </div> 
 
         {/* Hero Section Content */}

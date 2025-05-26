@@ -19,6 +19,7 @@ import Contactpage from './Contactpage';
 import Loader from './Loader';
 import DigitalMarketing from './Digitalmarketing';
 import WebDevolopment from './WebDevolopment';
+import PricingPage from './Pricingpage';
 const Navbar = () => {
   const [loading, setLoading] = useState(true);
 
@@ -67,6 +68,7 @@ const Navbar = () => {
 <Route path='/company' element = {<Company/>}  />
 <Route path='/services/digital-marketing' element = {<DigitalMarketing/>}  />
 <Route path='/services/web-development' element = {<WebDevolopment/>}  />
+<Route path='/Pricing' element = {<PricingPage/>}  />
 
 
 

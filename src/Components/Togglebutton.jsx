@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CgMenuRightAlt } from "react-icons/cg";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const menuVariants = {
@@ -53,13 +54,14 @@ const menuLinks = [
   { name: "Company", path: "/company" },
   { name: "Blogs", path: "/blogs" },
   { name: "Contact", path: "/contact" },
+  { name: "Pricing", path: "/Pricing" },
 ];
 
 const NestedDropdown = ({ items, setIsOpen }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="absolute top-auto top-0 bg-white text-black py-2 px-4 rounded-lg shadow-lg space-y-2 z-50 min-w-[200px]">
+    <div className="absolute top-auto left-0 bg-white text-black py-2 px-4 rounded-lg shadow-lg space-y-2 z-50 min-w-[200px]">
       {items.map((item, index) => (
         <div
           key={item.name}
@@ -75,7 +77,9 @@ const NestedDropdown = ({ items, setIsOpen }) => {
             {item.name}
           </Link>
           {item.dropdown && activeIndex === index && (
-            <NestedDropdown items={item.subLinks} setIsOpen={setIsOpen} />
+            <div className="pl-4">
+              <NestedDropdown items={item.subLinks} setIsOpen={setIsOpen} />
+            </div>
           )}
         </div>
       ))}
@@ -131,18 +135,36 @@ const Togglebutton = () => {
                   key={link.name}
                   variants={itemVariants}
                   className="text-center group relative"
-                  onMouseEnter={() => setActiveService(index)}
-                  onMouseLeave={() => setActiveService(null)}
                 >
-                  <Link
-                    to={link.path}
-                    onClick={() => !link.dropdown && setIsOpen(false)}
-                    className="text-5xl font-semibold my-2 hover:underline"
-                  >
-                    {link.name}
-                  </Link>
+                  <div className="flex items-center justify-center gap-2 text-5xl font-semibold my-2">
+                    <Link
+                      to={link.path}
+                      onClick={() => {
+                        setIsOpen(false);
+                      }}
+                      className="hover:underline"
+                    >
+                      {link.name}
+                    </Link>
+
+                    {link.dropdown && (
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setActiveService(activeService === index ? null : index);
+                        }}
+                        className="text-3xl"
+                      >
+                        {activeService === index ? <FaChevronUp /> : <FaChevronDown />}
+                      </button>
+                    )}
+                  </div>
+
                   {link.dropdown && activeService === index && (
-                    <NestedDropdown items={link.subLinks} setIsOpen={setIsOpen} />
+                    <div className="absolute mt-2 left-1/2 transform -translate-x-1/2 z-50">
+                      <NestedDropdown items={link.subLinks} setIsOpen={setIsOpen} />
+                    </div>
                   )}
                 </motion.div>
               ))}

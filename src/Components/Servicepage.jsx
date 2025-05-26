@@ -17,10 +17,21 @@ import { FiSearch } from "react-icons/fi";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import Marquee from 'react-fast-marquee';
 
 export default function Servicepage() {
   
+  
+  const row1 = [
+    'Logo design', 'Branding', 'Animations', '3D graphics',
+    'Webflow development'
+  ];
+  
+  const row2 = [
+    'UI/UX design', 'Graphic design', 'App design', 'Product design',
+    'Print design'
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -375,6 +386,35 @@ export default function Servicepage() {
           </div>
         </div>
       </section>
+
+
+      <div className="mx-auto w-full mt-16 md:w-1/2 space-y-4">
+        {/* Row 1 - scrolls left */}
+        <Marquee speed={40} gradient={false} pauseOnHover={true}>
+          {row1.concat(row1).map((item, idx) => (
+            <div
+              key={`r1-${idx}`}
+              className="mx-2 px-6 py-3 bg-zinc-900 rounded-lg border border-zinc-700 text-white whitespace-nowrap"
+            >
+              {item}
+            </div>
+          ))}
+        </Marquee>
+
+        {/* Row 2 - scrolls right */}
+        <Marquee speed={40} gradient={false} pauseOnHover={true} direction="right">
+          {row2.concat(row2).map((item, idx) => (
+            <div
+              key={`r2-${idx}`}
+              className="mx-2 px-6 py-3 bg-zinc-900 rounded-lg border border-zinc-700 text-white whitespace-nowrap"
+            >
+              {item}
+            </div>
+          ))}
+        </Marquee>
+      </div>
+  
+
 
       <div className="px-4 sm:px-6 lg:px-34 mt-44">
   <section className="bg-gradient-to-r from-[#002244] to-[#006AFE] text-white rounded-xl p-6 sm:p-8 md:p-16 my-12 relative overflow-hidden">
