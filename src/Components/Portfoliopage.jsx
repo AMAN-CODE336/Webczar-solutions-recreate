@@ -403,15 +403,15 @@ export default function Portfoliopage() {
       </div>
 
 
-      <div className=" py-20 overflow-hidden mt-44">
+      <div className="   py-20 overflow-hidden mt-34">
               <ScrollVelocity
                 texts={[
                   "Crafting Memorable Brands",
                   "Designs that Speak, Code that Works",
                   "Let's Shape the Future Together",
                 ]}
-                velocity={120}
-                className="text-white text-8xl"
+                velocity={100}
+                className="text-white text-3xl md:text-8xl"
               />
             </div>
     </>

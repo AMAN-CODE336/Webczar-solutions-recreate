@@ -55,6 +55,7 @@ const menuLinks = [
   { name: "Blogs", path: "/blogs" },
   { name: "Contact", path: "/contact" },
   { name: "Pricing", path: "/Pricing" },
+  { name: "FAQ", path: "/FAQ" },
 ];
 
 const NestedDropdown = ({ items, setIsOpen }) => {
@@ -129,46 +130,45 @@ const Togglebutton = () => {
               &times;
             </button>
 
-            <div className="space-y-6 relative">
-              {menuLinks.map((link, index) => (
-                <motion.div
-                  key={link.name}
-                  variants={itemVariants}
-                  className="text-center group relative"
-                >
-                  <div className="flex items-center justify-center gap-2 text-5xl font-semibold my-2">
-                    <Link
-                      to={link.path}
-                      onClick={() => {
-                        setIsOpen(false);
-                      }}
-                      className="hover:underline"
-                    >
-                      {link.name}
-                    </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-6 relative   ">
+  {menuLinks.map((link, index) => (
+    <motion.div
+      key={link.name}
+      variants={itemVariants}
+      className="group relative "
+    >
+      <div className="flex items-center justify-center gap-2 text-5xl font-semibold my-2">
+        <Link
+          to={link.path}
+          onClick={() => setIsOpen(false)}
+          className="hover:underline"
+        >
+          {link.name}
+        </Link>
 
-                    {link.dropdown && (
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setActiveService(activeService === index ? null : index);
-                        }}
-                        className="text-3xl"
-                      >
-                        {activeService === index ? <FaChevronUp /> : <FaChevronDown />}
-                      </button>
-                    )}
-                  </div>
+        {link.dropdown && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setActiveService(activeService === index ? null : index);
+            }}
+            className="text-xl"
+          >
+            {activeService === index ? <FaChevronUp /> : <FaChevronDown />}
+          </button>
+        )}
+      </div>
 
-                  {link.dropdown && activeService === index && (
-                    <div className="absolute mt-2 left-1/2 transform -translate-x-1/2 z-50">
-                      <NestedDropdown items={link.subLinks} setIsOpen={setIsOpen} />
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
+      {link.dropdown && activeService === index && (
+        <div className="absolute mt-2 left-1/2 transform -translate-x-1/2 z-50">
+          <NestedDropdown items={link.subLinks} setIsOpen={setIsOpen} />
+        </div>
+      )}
+    </motion.div>
+  ))}
+</div>
+
           </motion.div>
         )}
       </AnimatePresence>

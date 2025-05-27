@@ -1,4 +1,4 @@
-
+import { useEffect } from 'react';
 import React from 'react';
 
 const plans = [
@@ -43,6 +43,9 @@ const plans = [
 ];
 
 export default function PricingPage() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
    <>  
     <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
@@ -76,7 +79,7 @@ export default function PricingPage() {
    <div className=" min-h-screen py-16 px-4">
       <div className="text-center mb-12">
         <h1 className="text-4xl text-white font-bold mb-4">Simple Pricing for Everyone</h1>
-        <p className="text-gray-600 text-lg">Choose a plan that fits your needs and grow with us.</p>
+        <p className="text-white text-lg">Choose a plan that fits your needs and grow with us.</p>
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">

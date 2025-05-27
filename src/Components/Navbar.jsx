@@ -20,6 +20,8 @@ import Loader from './Loader';
 import DigitalMarketing from './Digitalmarketing';
 import WebDevolopment from './WebDevolopment';
 import PricingPage from './Pricingpage';
+import { FaQ } from 'react-icons/fa6';
+import FAQ from './Faq';
 const Navbar = () => {
   const [loading, setLoading] = useState(true);
 
@@ -69,6 +71,7 @@ const Navbar = () => {
 <Route path='/services/digital-marketing' element = {<DigitalMarketing/>}  />
 <Route path='/services/web-development' element = {<WebDevolopment/>}  />
 <Route path='/Pricing' element = {<PricingPage/>}  />
+<Route path='/FAQ' element = {<FAQ/>}  />
 
 
 

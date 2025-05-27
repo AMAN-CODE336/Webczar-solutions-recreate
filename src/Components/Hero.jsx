@@ -32,8 +32,12 @@ export default function Hero() {
 
   const videos = [
     "/webczar front banner-1.mp4",
-    "/banner-video-2.mp4"
-  ];
+    "/banner-video-2.mp4",
+    " /WEBCZAR-BANNER-3.mp4" ,
+    "/WEBCZAR-BANNER-5.mp4" ,
+    "/WEBCZAR-BANNER-6.mp4" ,
+    "/WEBCZAR-BANNER-7.mp4", 
+ ];
 
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
@@ -481,15 +485,15 @@ export default function Hero() {
 </div>
 
 
-      <div className="   py-20 overflow-hidden mt-34">
+      <div className="   py-20 overflow-hidden md:mt-34">
         <ScrollVelocity
           texts={[
             "Crafting Memorable Brands",
             "Designs that Speak, Code that Works",
             "Let's Shape the Future Together",
           ]}
-          velocity={200}
-          className="text-white text-8xl"
+          velocity={100}
+          className="text-white text-3xl md:text-8xl"
         />
       </div>
 
