@@ -64,7 +64,7 @@ export default function Hero() {
 
 <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        autoplay={{ delay: 50000, disableOnInteraction: false }}
         loop={true}
         className="absolute top-0 left-0 w-full h-full z-[-1]"
       >
@@ -75,7 +75,7 @@ export default function Hero() {
               loop
               muted
               playsInline
-              className="w-full h-full object-cover max-h-screen"
+              className="w-full h-full object-cover object-cover sm:object-cover object-contain max-h-screen"
             >
               <source src={src} type="video/mp4" />
               Your browser does not support the video tag.

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const faqs = [
@@ -36,6 +36,10 @@ const faqs = [
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+ useEffect(()=>{
+  window.scrollTo(0, 0)
+ },[])
+
 
   const toggleIndex = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
