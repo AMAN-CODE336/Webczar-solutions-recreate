@@ -64,7 +64,7 @@ export default function Hero() {
 
 <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 50000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000 }}
         loop={true}
         className="absolute top-0 left-0 w-full h-full z-[-1]"
       >

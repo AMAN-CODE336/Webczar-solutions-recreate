@@ -1,5 +1,6 @@
 import { useEffect } from "react"
-
+import ClientCard from "./Clientcard";
+import { Link } from "react-router-dom";
 export default function ClientsPage () {
     useEffect(()=>{
       window.scrollTo(0,0)
@@ -45,9 +46,11 @@ export default function ClientsPage () {
         </h1>
         <p className="text-lg font-semibold md:text-xl text-gray-300 mb-6 max-w-2xl">
         We’re proud to collaborate with brands that are shaping the future. Our client relationships are built on trust, transparency, and transformative results. </p>
+        <Link to={"/contact"} >
         <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
           Get in Touch →
         </button>
+        </Link>
       </div>
 
       <div className="flex flex-col lg:flex-row mt-24 lg:gap-20 px-4 lg:px-0">
@@ -109,6 +112,7 @@ export default function ClientsPage () {
             <div className="bg-black py-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {logos.map((logo, index) => (
+         
           <div
             key={index}
             className="bg-neutral-900 flex items-center justify-center h-28 p-4 rounded-md shadow-md hover:bg-neutral-800 transition"
@@ -119,9 +123,59 @@ export default function ClientsPage () {
               className="max-h-28 object-contain filter grayscale hover:grayscale-0 transition duration-300"
             />
           </div>
+          
         ))}
+        
       </div>
+      
     </div>
+
+
+    <div className=" px-8 lg:px-24 mt-42 space-y-3">
+  <h2 className="text-3xl font-md text-white font-inter">
+    Voices Behind the Vision{" "}
+  </h2>
+  <p className="text-xl font-semibold text-[#006AFE] italic">
+    Clients Chronicles — crafted through trust, driven by results.
+  </p>
+  <p className="text-md text-white">
+    Explore the milestones, moments, and meaningful stories from those who’ve grown with us.
+  </p>
+</div>
+
+<div className="space-y-4 lg:flex lg:space-y-0 justify-around p-12 mt-14 gap-6 lg:gap-6 sm:gap-6">
+  <ClientCard
+    image="Images/closeup-shot-.jpg"
+    name="Aman Anand"
+    role="Director"
+    company="Fima CF India"
+    quote="Working with them was seamless and results-driven — truly exceeded expectations."
+  />
+
+  <ClientCard
+    image="Images/closeup-shot-.jpg"
+    name="Aman Anand"
+    role="Director"
+    company="Fima CF India"
+    quote="Working with them was seamless and results-driven — truly exceeded expectations."
+  />
+
+  <ClientCard
+    image="Images/closeup-shot-.jpg"
+    name="Aman Anand"
+    role="Director"
+    company="Fima CF India"
+    quote="Working with them was seamless and results-driven — truly exceeded expectations."
+  />
+
+  <ClientCard
+    image="Images/closeup-shot-.jpg"
+    name="Aman Anand"
+    role="Director"
+    company="Fima CF India"
+    quote="Working with them was seamless and results-driven — truly exceeded expectations."
+  />
+</div>
         </>
     )
 }
