@@ -37,6 +37,7 @@ export default function Hero() {
     "/WEBCZAR-BANNER-5.mp4" ,
     "/WEBCZAR-BANNER-6.mp4" ,
     "/WEBCZAR-BANNER-7.mp4", 
+    "/webczar-banner-8.mp4",
  ];
 
   const handleAnimationComplete = () => {
