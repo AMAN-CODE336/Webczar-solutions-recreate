@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import ClientCard from "./Clientcard";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 export default function ClientsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,26 +47,33 @@ export default function ClientsPage() {
     },
     { name: "jagmohan", img: "/Images/Clients-page/client-12-Photoroom.png" },
     { name: "NEXA", img: "/Images/Clients-page/client-13-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-14-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-15-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-16-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-17-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-18-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-19-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-20-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-21-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-22-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-23-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-24-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-25-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-26-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-27-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-28-Photoroom.png" },
-    { name: "NEXA", img: "/Images/Clients-page/client-29-Photoroom.png" },
+    { name: "Winni cakes", img: "/Images/Clients-page/client-14-Photoroom.png" },
+    { name: "Coolroof", img: "/Images/Clients-page/client-15-Photoroom.png" },
+    { name: "Samson Laboratories", img: "/Images/Clients-page/client-16-Photoroom.png" },
+    { name: "Acme", img: "/Images/Clients-page/client-17-Photoroom.png" },
+    { name: "The Sutlej ", img: "/Images/Clients-page/client-18-Photoroom.png" },
+    { name: "Jubilee", img: "/Images/Clients-page/client-19-Photoroom.png" },
+    { name: "Adress Infra Group", img: "/Images/Clients-page/client-20-Photoroom.png" },
+    { name: "Srias Life Spaces", img: "/Images/Clients-page/client-21-Photoroom.png" },
+    { name: "DM Home", img: "/Images/Clients-page/client-22-Photoroom.png" },
+    { name: "CSML", img: "/Images/Clients-page/client-23-Photoroom.png" },
+    { name: "WWICS", img: "/Images/Clients-page/client-24-Photoroom.png" },
+    { name: "UNDER ARMOUR", img: "/Images/Clients-page/client-25-Photoroom.png" },
+    { name: "DLF", img: "/Images/Clients-page/client-26-Photoroom.png" },
+    { name: "BCC", img: "/Images/Clients-page/client-27-Photoroom.png" },
+    { name: "Z-Power", img: "/Images/Clients-page/client-28-Photoroom.png" },
+    { name: "Lotus", img: "/Images/Clients-page/client-29-Photoroom.png" },
   ];
+
+   const videos = [
+ 
+    "/WEBCZAR-BANNER-6.mp4" ,
+    
+ ];
+
   return (
     <>
-      <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
+      {/* <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
         <h1 className="text-4xl text-white md:text-5xl font-bold mb-4">
           Trusted by Industry Leaders and Visionary Startups
         </h1>
@@ -77,6 +87,52 @@ export default function ClientsPage() {
             Get in Touch →
           </button>
         </Link>
+      </div> */}
+
+<div className="relative min-h-screen overflow-hidden bg-black">
+        {/* Waves Background */}
+        <div className="absolute inset-0 z-0">
+          {/* <Waves
+            lineColor="rgba(112, 106, 106, 0.2)"
+            backgroundColor="rgba(0, 0, 0, 0.2)"
+            waveSpeedX={0.02}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.01}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
+          /> */}
+
+<Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 5000 }}
+        loop={true}
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
+      >
+        {videos.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-cover sm:object-cover object-contain max-h-screen"
+            >
+              <source src={src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+          </SwiperSlide>             
+
+        ))} 
+
+      </Swiper>
+
+        </div> 
+
       </div>
 
       <div className="flex flex-col lg:flex-row mt-24 lg:gap-20 px-4 lg:px-0">

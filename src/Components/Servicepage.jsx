@@ -18,6 +18,9 @@ import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Marquee from 'react-fast-marquee';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 export default function Servicepage() {
   
@@ -62,9 +65,80 @@ export default function Servicepage() {
       desc: "Build high-performance mobile apps for all platforms.",
     },
   ];
+
+  const videos = [
+    "/banner-video-2.mp4",
+    
+ ];
   return (
     <>
-      <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
+<div className="relative min-h-screen overflow-hidden bg-black">
+        {/* Waves Background */}
+        <div className="absolute inset-0 z-0">
+          {/* <Waves
+            lineColor="rgba(112, 106, 106, 0.2)"
+            backgroundColor="rgba(0, 0, 0, 0.2)"
+            waveSpeedX={0.02}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.01}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
+          /> */}
+
+<Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 5000 }}
+        loop={true}
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
+      >
+        {videos.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-cover sm:object-cover object-contain max-h-screen"
+            >
+              <source src={src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+          </SwiperSlide>             
+
+        ))} 
+
+      </Swiper>
+
+     
+      
+
+        </div> 
+
+        {/* Hero Section Content */}
+        {/* <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
+          <h1 className="text-4xl font-Playfair Display font-bold text-white">
+            Webczar Solutions - Driving Growth Through <br /> Tech & Marketing
+          </h1>
+          <p className="mt-4 text-xl text-white">
+            Innovative Tech & Marketing Solutions to Accelerate Your Business
+            Growth
+          </p>
+          <Link to={"/company"}>
+          <button className="mt-6 px-6 py-3 bg-white text-black rounded-full shadow hover:bg-gray-200 transition">
+          Explore Now
+          </button>
+          </Link>
+        </div> */}
+      </div>
+
+
+
+      {/* <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
         <h1 className="text-4xl text-white md:text-5xl font-bold mb-4">
           Solutions That Spark Growth
         </h1>
@@ -77,7 +151,7 @@ export default function Servicepage() {
         Book a Demo →
         </button>
         </Link>
-      </div>
+      </div> */}
 
       <section className="bg-black text-[#006AFE]  py-16 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 text-center">

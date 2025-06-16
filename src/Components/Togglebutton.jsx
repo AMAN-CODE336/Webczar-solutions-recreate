@@ -53,10 +53,10 @@ const menuLinks = [
   { name: "Portfolio", path: "/portfolios" },
   { name: "Company", path: "/company" },
   { name: "Blogs", path: "/blogs" },
-  { name: "Contact", path: "/contact" },
   { name: "Pricing", path: "/Pricing" },
-  { name: "FaQ's", path: "/FAQ" },
   { name: "Clients", path: "/Clients" },
+  { name: "FaQ's", path: "/FAQ" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const NestedDropdown = ({ items, setIsOpen }) => {

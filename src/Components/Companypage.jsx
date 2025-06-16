@@ -2,14 +2,25 @@ import ClientCard from "./Clientcard"
 import FounderCard from "./Foundercard"
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 export default function Company(){
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);  
+
+  const videos = [
+    
+    "/WEBCZAR-BANNER-5.mp4" ,
+    
+ ];
   
   return (
         <>
-         <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
+
+
+         {/* <div className="  flex flex-col items-center justify-center min-h-screen text-center px-6">
         <h1 className="text-4xl text-white md:text-5xl font-bold mb-4">
         Innovating with Purpose, Delivering with Passion
                 </h1>
@@ -19,6 +30,56 @@ export default function Company(){
         <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold  transition">
           Get Updates
         </button>
+      </div> */}
+
+
+<div className="relative min-h-screen overflow-hidden bg-black">
+        {/* Waves Background */}
+        <div className="absolute inset-0 z-0">
+          {/* <Waves
+            lineColor="rgba(112, 106, 106, 0.2)"
+            backgroundColor="rgba(0, 0, 0, 0.2)"
+            waveSpeedX={0.02}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.01}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
+          /> */}
+
+<Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 5000 }}
+        loop={true}
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
+      >
+        {videos.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-cover sm:object-cover object-contain max-h-screen"
+            >
+              <source src={src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+          </SwiperSlide>             
+
+        ))} 
+
+      </Swiper>
+
+     
+      
+
+        </div> 
+
       </div>
 
       {/* Introduction Section */}

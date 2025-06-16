@@ -138,10 +138,10 @@ export default function Hero() {
   <section className="bg-gradient-to-r from-[#002244] to-[#006AFE] text-white rounded-xl p-6 sm:p-10 md:p-16 my-12 relative overflow-hidden">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
       <div className="text-center md:text-left">
-        <p className="text-xs sm:text-sm uppercase text-yellow-200 tracking-wide font-semibold mb-2 sm:mb-3">
-          Facing digital challenges?
+        <p className="md:text-3xl text-sm uppercase text-yellow-200  font-semibold mb-2 sm:mb-3">
+          Facing Online digital challenges?
         </p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
+        <h2 className="text-2xl sm:text-3xl md:text-lg font-bold leading-snug">
           Let’s transform your tech needs into impactful results
         </h2>
       </div>
